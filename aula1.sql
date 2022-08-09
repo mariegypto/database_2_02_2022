@@ -44,4 +44,14 @@ INSERT INTO students(
     2
 );
 
+SELECT "Select All columns" AS "INFO";
+
 SELECT * FROM students;
+
+SELECT "Select Specific columns - version 2" AS "INFO";
+
+SELECT students.first_name, students.last_name, students.gender FROM students;
+
+SELECT "Select with where" AS "INFO";
+
+SELECT students.first_name, students.last_name, students.gender FROM students WHERE students.first_name = 'Mariana';
