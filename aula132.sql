@@ -1,0 +1,20 @@
+START TRANSACTION;
+    DELETE FROM musics WHERE name_of_music = 'Enter Sandman';
+
+SELECT "AFTER DELETE ROW OF musics TABLE" AS 'LOG';
+
+SELECT * FROM musics;
+
+COMMIT;
+
+SELECT "COMMIT EXECUTED" AS 'LOG';
+
+SELECT * FROM musics;
+
+ROLLBACK;
+
+SELECT "ROLLBACK EXECUTED" AS "LOG";
+
+SELECT * FROM musics;
+
+SET autocommit=1;
