@@ -146,3 +146,23 @@ END $$
 DELIMITER ;
 
 call SelectCountryCase(2);
+
+DELIMITER $$
+
+CREATE PROCEDURE SelectLoopLabel()
+BEGIN
+    DECLARE ctr INT;
+    SET ctr=0;
+
+    loop_lable: LOOP
+        IF ctr > 10 THEN
+        LEAVE loop_lable;
+        END IF;
+        SELECT ctr AS 'CTR';
+        SET ctr=ctr+1;
+    END LOOP;
+END $$
+
+DELIMITER ;
+
+call SelectLoopLabel();
